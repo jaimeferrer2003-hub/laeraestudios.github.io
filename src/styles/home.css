@@ -1,0 +1,139 @@
+/* ==============================
+   ESTILO GENERAL HOME
+================================ */
+.home-root {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    color: #f2f2f2;
+    background: #0d0d0d;
+    overflow-x: hidden;
+    line-height: 1.7;
+    font-family: "Inter", sans-serif;
+}
+
+/* ==============================
+   HERO
+================================ */
+.hero {
+    width: 100%;
+    height: 70vh;
+    background: url("/src/img/hero.jpg") center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 6%;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ==============================
+   TEXTO INTRO
+================================ */
+.intro {
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    font-size: 1.2rem;
+    color: #e4e4e4;
+}
+
+.intro strong {
+    color: #ffcc66;
+}
+
+.owners-short {
+    background: #141414;
+    padding: 1.4rem;
+    border-left: 4px solid #ffcc66;
+    margin: 2rem 0;
+}
+
+/* ==============================
+   PROPIETARIOS
+================================ */
+.owners-section {
+    width: 100%;
+    text-align: center;
+}
+
+.owners-section h2 {
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.owners {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.owner-card {
+    width: 300px;
+    background: #111;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    color: #fff;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.owner-card:hover {
+    transform: translateY(-8px);
+}
+
+.owner-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* ==============================
+RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .hero {
+        height: 55vh;
+        padding-left: 4%;
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .intro {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .owner-card img {
+        height: 280px;
+    }
+}

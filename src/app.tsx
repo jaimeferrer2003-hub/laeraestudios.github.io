@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import Home from "./pages/home";
 import Servicios from "./pages/services";
 import Equipamiento from "./pages/equipment";
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/equipment" element={<Equipamiento />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
+      <Footer />
     </>
   );
 };

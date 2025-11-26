@@ -1,35 +1,55 @@
-import React, { useState } from "react";
+import React from "react";
 import Swal from "sweetalert2";
+import "../styles/contact.css";
 
-const Contact: React.FC = () => {
-    const [email, setEmail] = useState("");
-
-    const handleSubmit = (e: React.FormEvent) => {
+export default function Contact() {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
         Swal.fire({
-            title: "¡Mensaje enviado!",
-            text: `Gracias, ${email}. Nos pondremos en contacto contigo pronto.`,
+            title: "¡Enviado!",
+            text: "Tu mensaje ha sido enviado correctamente.",
             icon: "success",
-            confirmButtonText: "Cerrar"
+            confirmButtonColor: "#ffcc66",
+            background: "#141414",
+            color: "#f2f2f2"
         });
-        setEmail("");
     };
 
     return (
-        <main className="contact">
-            <h1>Contacto</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    placeholder="Tu correo"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                />
-                <button type="submit">Enviar</button>
-            </form>
-        </main>
-    );
-};
+        <section className="contact-root">
+            <h2>Contacto</h2>
 
-export default Contact;
+            <div className="contact-container">
+                {/* FORMULARIO */}
+                <form className="contact-form" onSubmit={handleSubmit}>
+                    <label>
+                        Nombre:
+                        <input type="text" name="name" placeholder="Tu nombre" required />
+                    </label>
+
+                    <label>
+                        Email:
+                        <input type="email" name="email" placeholder="Tu correo" required />
+                    </label>
+
+                    <button type="submit">Enviar</button>
+                </form>
+
+                {/* MAPA */}
+                <div className="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!..."
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
+            </div>
+        </section>
+    );
+}
+
